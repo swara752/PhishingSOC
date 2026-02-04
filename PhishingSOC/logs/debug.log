@@ -1,0 +1,11 @@
+[2026-02-02 16:14:29] LOGIN_ATTEMPT | Username: demo@user.local | IP: 192.168.11.143 | Success: true
+[2026-02-02 16:14:35] LOGIN_ATTEMPT | Username: demo@user.local | IP: 192.168.11.143 | Success: true
+[2026-02-02 16:14:43] LOGIN_ATTEMPT | Username: demo@user.local | IP: 192.168.11.143 | Success: true
+[2026-02-02 16:16:14] LOGIN_ATTEMPT | Username: demo@user.local | IP: 192.168.11.143 | Success: true
+[2026-02-02 16:18:12] LOGIN_ATTEMPT | Username: demo@user.local | IP: 192.168.11.143 | Success: true
+[2026-02-02 16:21:47] LOGIN_ATTEMPT | Username: demo@user.local | IP: 192.168.11.143 | Success: true
+[2026-02-02 16:21:55] LOGIN_ATTEMPT | Username: demo@user.local | IP: 192.168.11.143 | Success: true
+[2026-02-02 16:22:04] LOGIN_ATTEMPT | Username: demo@user.local | IP: 192.168.11.143 | Success: true
+[2026-02-02 16:27:10] LOGIN_ATTEMPT | Username: test@domain.local | IP: 192.168.11.143 | Success: true
+[2026-02-02 16:30:50] USER_ACTION | User: newuser@test.local | Action: REGISTRATION_ATTEMPT | Details: User registration successful from IP: 192.168.11.143
+[2026-02-02 16:31:53] USER_ACTION | User: user@domain.local | Action: REGISTRATION_ATTEMPT | Details: User registration successful from IP: 192.168.11.143

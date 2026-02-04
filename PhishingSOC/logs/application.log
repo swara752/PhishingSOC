@@ -1,0 +1,569 @@
+2026-02-02 15:40:03.339  INFO 22287 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 22287 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 15:40:03.343 DEBUG 22287 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 15:40:03.344  INFO 22287 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 15:40:03.596  WARN 22287 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'activityLogger' defined in class path resource [com/soc/phishing/logs/LoggerConfiguration.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=loggerConfiguration; factoryMethodName=activityLogger; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/soc/phishing/logs/LoggerConfiguration.class]] for bean 'activityLogger': There is already [Generic bean: class [com.soc.phishing.logs.ActivityLogger]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:file:/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar!/BOOT-INF/classes!/com/soc/phishing/logs/ActivityLogger.class]] bound.
+2026-02-02 15:40:03.602  INFO 22287 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-02-02 15:40:03.614 ERROR 22287 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'activityLogger', defined in class path resource [com/soc/phishing/logs/LoggerConfiguration.class], could not be registered. A bean with that name has already been defined in URL [jar:file:/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar!/BOOT-INF/classes!/com/soc/phishing/logs/ActivityLogger.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2026-02-02 16:06:37.730  INFO 26255 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 26255 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:06:37.732 DEBUG 26255 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:06:37.732  INFO 26255 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:06:38.334  INFO 26255 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:06:38.340  INFO 26255 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:06:38.340  INFO 26255 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:06:38.375  INFO 26255 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:06:38.375  INFO 26255 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 613 ms
+2026-02-02 16:06:38.604  WARN 26255 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: bc9a3b4f-0508-413a-aa89-07ae12292120
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:06:38.660  INFO 26255 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@793138bd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1951b871, org.springframework.security.web.context.SecurityContextPersistenceFilter@5b529706, org.springframework.security.web.header.HeaderWriterFilter@2e9fda69, org.springframework.security.web.csrf.CsrfFilter@7ac2e39b, org.springframework.security.web.authentication.logout.LogoutFilter@1a45193b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7096b474, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3f390d63, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5c18016b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3d3ba765, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b5a12ae, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5553d0f5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33aeca0b, org.springframework.security.web.session.SessionManagementFilter@1755e85b, org.springframework.security.web.access.ExceptionTranslationFilter@781f10f2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4bd1f8dd]
+2026-02-02 16:06:38.686  INFO 26255 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-02 16:06:38.693  INFO 26255 --- [main] com.soc.phishing.PhishingSocApplication  : Started PhishingSocApplication in 1.259 seconds (JVM running for 1.543)
+2026-02-02 16:06:40.233  INFO 26255 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-02 16:06:40.233  INFO 26255 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-02 16:06:40.234  INFO 26255 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-02-02 16:07:00.201  INFO 26527 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 26527 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:07:00.203 DEBUG 26527 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:07:00.203  INFO 26527 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:07:00.775  INFO 26527 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:07:00.781  INFO 26527 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:07:00.781  INFO 26527 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:07:00.817  INFO 26527 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:07:00.817  INFO 26527 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 582 ms
+2026-02-02 16:07:01.022  WARN 26527 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2f3d295f-55b8-4424-87a7-5807381c1c6c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:07:01.088  INFO 26527 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5c18016b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33aeca0b, org.springframework.security.web.context.SecurityContextPersistenceFilter@7b5a12ae, org.springframework.security.web.header.HeaderWriterFilter@1755e85b, org.springframework.security.web.csrf.CsrfFilter@64a8c844, org.springframework.security.web.authentication.logout.LogoutFilter@5286c33a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3c989952, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5a411614, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@43aaf813, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5d1659ea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1af687fe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14dda234, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57ac5227, org.springframework.security.web.session.SessionManagementFilter@2371aaca, org.springframework.security.web.access.ExceptionTranslationFilter@2e9fda69, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3e14c16d]
+2026-02-02 16:07:01.112  INFO 26527 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-02 16:07:01.119  INFO 26527 --- [main] com.soc.phishing.PhishingSocApplication  : Started PhishingSocApplication in 1.2 seconds (JVM running for 1.472)
+2026-02-02 16:07:02.727  INFO 26527 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-02 16:07:02.728  INFO 26527 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-02 16:07:02.761  INFO 26527 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-02-02 16:07:07.926  INFO 26622 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 26622 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:07:07.927 DEBUG 26622 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:07:07.928  INFO 26622 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:07:08.474  INFO 26622 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:07:08.481  INFO 26622 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:07:08.481  INFO 26622 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:07:08.517  INFO 26622 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:07:08.518  INFO 26622 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 560 ms
+2026-02-02 16:07:08.737  WARN 26622 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 52421da2-f50e-4475-bbdc-00a49afdbadd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:07:08.793  INFO 26622 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5c18016b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33aeca0b, org.springframework.security.web.context.SecurityContextPersistenceFilter@7b5a12ae, org.springframework.security.web.header.HeaderWriterFilter@1755e85b, org.springframework.security.web.csrf.CsrfFilter@64a8c844, org.springframework.security.web.authentication.logout.LogoutFilter@5286c33a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3c989952, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5a411614, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@43aaf813, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5d1659ea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1af687fe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14dda234, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57ac5227, org.springframework.security.web.session.SessionManagementFilter@2371aaca, org.springframework.security.web.access.ExceptionTranslationFilter@2e9fda69, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3e14c16d]
+2026-02-02 16:07:08.811  WARN 26622 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-02-02 16:07:08.813  INFO 26622 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-02 16:07:08.824  INFO 26622 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-02-02 16:07:08.836 ERROR 26622 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-02 16:11:18.519  INFO 27338 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 27338 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:11:18.521 DEBUG 27338 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:11:18.522  INFO 27338 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:11:19.096  INFO 27338 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:11:19.104  INFO 27338 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:11:19.104  INFO 27338 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:11:19.141  INFO 27338 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:11:19.142  INFO 27338 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 589 ms
+2026-02-02 16:11:19.211  WARN 27338 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4945b9e8-2b3e-42f2-a104-5fb35a0b97bc
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:11:19.262  INFO 27338 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2a898881, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16c63f5, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b3ed2f0, org.springframework.security.web.header.HeaderWriterFilter@6dee4f1b, org.springframework.security.web.authentication.logout.LogoutFilter@61a88b8c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@517d4a0d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7862f56, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35229f85, org.springframework.security.web.session.SessionManagementFilter@66ac5762, org.springframework.security.web.access.ExceptionTranslationFilter@18a136ac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5f0e9815]
+2026-02-02 16:11:19.420  INFO 27338 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-02 16:11:19.427  INFO 27338 --- [main] com.soc.phishing.PhishingSocApplication  : Started PhishingSocApplication in 1.215 seconds (JVM running for 1.493)
+2026-02-02 16:11:20.005  INFO 27338 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-02 16:11:20.006  INFO 27338 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-02 16:11:20.007  INFO 27338 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-02-02 16:11:23.947  INFO 27435 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 27435 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:11:23.948 DEBUG 27435 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:11:23.949  INFO 27435 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:11:24.541  INFO 27435 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:11:24.547  INFO 27435 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:11:24.547  INFO 27435 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:11:24.583  INFO 27435 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:11:24.584  INFO 27435 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 604 ms
+2026-02-02 16:11:24.658  WARN 27435 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3476580a-f7e0-4f50-817f-a201a4b7e1ea
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:11:24.711  INFO 27435 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@16c63f5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35229f85, org.springframework.security.web.context.SecurityContextPersistenceFilter@4fad9bb2, org.springframework.security.web.header.HeaderWriterFilter@176b3f44, org.springframework.security.web.authentication.logout.LogoutFilter@22295ec4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7862f56, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a12c404, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6d3c5255, org.springframework.security.web.session.SessionManagementFilter@797cf65c, org.springframework.security.web.access.ExceptionTranslationFilter@77d67cf3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@76884e4b]
+2026-02-02 16:11:24.874  WARN 27435 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-02-02 16:11:24.876  INFO 27435 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-02 16:11:24.885  INFO 27435 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-02-02 16:11:24.895 ERROR 27435 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-02 16:14:55.589  WARN 27338 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2026-02-02 16:17:45.380  INFO 28184 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 28184 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:17:45.382 DEBUG 28184 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:17:45.383  INFO 28184 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:17:45.967  INFO 28184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:17:45.974  INFO 28184 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:17:45.974  INFO 28184 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:17:46.010  INFO 28184 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:17:46.010  INFO 28184 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 595 ms
+2026-02-02 16:17:46.085  WARN 28184 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2ce7a210-27bf-4fd9-8d29-88d8eafffb3a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:17:46.140  INFO 28184 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@76884e4b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@126945f9, org.springframework.security.web.context.SecurityContextPersistenceFilter@797cf65c, org.springframework.security.web.header.HeaderWriterFilter@18a136ac, org.springframework.security.web.authentication.logout.LogoutFilter@512535ff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b3ed2f0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4fad9bb2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a898881, org.springframework.security.web.session.SessionManagementFilter@5d12a356, org.springframework.security.web.access.ExceptionTranslationFilter@6d1ef78d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@50468873]
+2026-02-02 16:17:46.302  INFO 28184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-02 16:17:46.310  INFO 28184 --- [main] com.soc.phishing.PhishingSocApplication  : Started PhishingSocApplication in 1.207 seconds (JVM running for 1.503)
+2026-02-02 16:17:46.871  INFO 28184 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-02 16:17:46.873  INFO 28184 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-02 16:17:46.874  INFO 28184 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-02-02 16:17:56.575  INFO 28281 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 28281 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:17:56.576 DEBUG 28281 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:17:56.577  INFO 28281 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:17:57.152  INFO 28281 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:17:57.158  INFO 28281 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:17:57.158  INFO 28281 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:17:57.198  INFO 28281 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:17:57.198  INFO 28281 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 587 ms
+2026-02-02 16:17:57.277  WARN 28281 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 74a11e10-a099-4cca-a5ee-2b491d655ccf
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:17:57.330  INFO 28281 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4ff4357f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49cb9cb5, org.springframework.security.web.context.SecurityContextPersistenceFilter@77d67cf3, org.springframework.security.web.header.HeaderWriterFilter@6ad3381f, org.springframework.security.web.authentication.logout.LogoutFilter@149dd36b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@176b3f44, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6ee6f53, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@55322aab, org.springframework.security.web.session.SessionManagementFilter@6d1ef78d, org.springframework.security.web.access.ExceptionTranslationFilter@5a709816, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@530712d]
+2026-02-02 16:17:57.488  WARN 28281 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-02-02 16:17:57.491  INFO 28281 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-02 16:17:57.499  INFO 28281 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-02-02 16:17:57.508 ERROR 28281 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-02 16:21:25.140  INFO 29058 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 29058 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:21:25.142 DEBUG 29058 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:21:25.143  INFO 29058 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:21:25.734  INFO 29058 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:21:25.741  INFO 29058 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:21:25.741  INFO 29058 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:21:25.781  INFO 29058 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:21:25.781  INFO 29058 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 603 ms
+2026-02-02 16:21:25.861  WARN 29058 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 829781eb-c0e6-47c5-85ce-28eda337a01d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:21:25.913  INFO 29058 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@12c7a01b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13d9b21f, org.springframework.security.web.context.SecurityContextPersistenceFilter@e19bb76, org.springframework.security.web.header.HeaderWriterFilter@1941a8ff, org.springframework.security.web.authentication.logout.LogoutFilter@41d426b5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71529963, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61a88b8c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2826f61, org.springframework.security.web.session.SessionManagementFilter@4982cc36, org.springframework.security.web.access.ExceptionTranslationFilter@7862f56, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2da59753]
+2026-02-02 16:21:26.088  INFO 29058 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-02 16:21:26.095  INFO 29058 --- [main] com.soc.phishing.PhishingSocApplication  : Started PhishingSocApplication in 1.247 seconds (JVM running for 1.484)
+2026-02-02 16:21:30.667  INFO 29133 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 29133 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:21:30.669 DEBUG 29133 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:21:30.670  INFO 29133 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:21:31.289  INFO 29133 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:21:31.296  INFO 29133 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:21:31.296  INFO 29133 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:21:31.335  INFO 29133 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:21:31.336  INFO 29133 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 633 ms
+2026-02-02 16:21:31.410  WARN 29133 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: b4011855-da35-4786-9272-8ecd5b802874
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:21:31.466  INFO 29133 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6986bbaf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4879dfad, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b3ed2f0, org.springframework.security.web.header.HeaderWriterFilter@6dee4f1b, org.springframework.security.web.authentication.logout.LogoutFilter@61a88b8c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@517d4a0d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7862f56, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4758820d, org.springframework.security.web.session.SessionManagementFilter@66ac5762, org.springframework.security.web.access.ExceptionTranslationFilter@18a136ac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35229f85]
+2026-02-02 16:21:31.640  WARN 29133 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-02-02 16:21:31.643  INFO 29133 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-02 16:21:31.655  INFO 29133 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-02-02 16:21:31.664 ERROR 29133 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-02 16:21:32.181  INFO 29058 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-02 16:21:32.182  INFO 29058 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-02 16:21:32.183  INFO 29058 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-02-02 16:26:01.870  INFO 29973 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 29973 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:26:01.873 DEBUG 29973 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:26:01.874  INFO 29973 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:26:02.466  INFO 29973 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:26:02.473  INFO 29973 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:26:02.473  INFO 29973 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:26:02.508  INFO 29973 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:26:02.508  INFO 29973 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 602 ms
+2026-02-02 16:26:02.541 DEBUG 29973 --- [main] c.s.p.auth.JwtAuthenticationFilter       : Filter 'jwtAuthenticationFilter' configured for use
+2026-02-02 16:26:02.585  WARN 29973 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: bb98445c-6535-43eb-bba8-f554c1260365
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:26:02.637  INFO 29973 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4d9ac0b4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@130dca52, org.springframework.security.web.context.SecurityContextPersistenceFilter@22295ec4, org.springframework.security.web.header.HeaderWriterFilter@2c1156a7, org.springframework.security.web.authentication.logout.LogoutFilter@a22cb6a, com.soc.phishing.auth.JwtAuthenticationFilter@4397ad89, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f270e0a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a760689, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2654635, org.springframework.security.web.session.SessionManagementFilter@512535ff, org.springframework.security.web.access.ExceptionTranslationFilter@149dd36b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@13d9b21f]
+2026-02-02 16:26:02.813  INFO 29973 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-02 16:26:02.821  INFO 29973 --- [main] com.soc.phishing.PhishingSocApplication  : Started PhishingSocApplication in 1.259 seconds (JVM running for 1.531)
+2026-02-02 16:26:03.364  INFO 29973 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-02 16:26:03.365  INFO 29973 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-02 16:26:03.366  INFO 29973 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-02-02 16:26:03.392  WARN 29973 --- [http-nio-8080-exec-1] c.s.p.auth.JwtAuthenticationFilter       : JWT validation failed: JWT strings must contain exactly 2 period characters. Found: 0
+2026-02-02 16:26:07.444  INFO 30060 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 30060 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:26:07.446 DEBUG 30060 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:26:07.447  INFO 30060 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:26:08.025  INFO 30060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:26:08.032  INFO 30060 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:26:08.032  INFO 30060 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:26:08.073  INFO 30060 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:26:08.073  INFO 30060 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 594 ms
+2026-02-02 16:26:08.109 DEBUG 30060 --- [main] c.s.p.auth.JwtAuthenticationFilter       : Filter 'jwtAuthenticationFilter' configured for use
+2026-02-02 16:26:08.159  WARN 30060 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3175de1f-a1fb-4cad-859a-e3ef4ec8075e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:26:08.220  INFO 30060 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2654635, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@737a135b, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f270e0a, org.springframework.security.web.header.HeaderWriterFilter@4982cc36, org.springframework.security.web.authentication.logout.LogoutFilter@59b38691, com.soc.phishing.auth.JwtAuthenticationFilter@4397ad89, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7241a47d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@70f59913, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@687ef2e0, org.springframework.security.web.session.SessionManagementFilter@61a88b8c, org.springframework.security.web.access.ExceptionTranslationFilter@2c1156a7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@62727399]
+2026-02-02 16:26:08.385  WARN 30060 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-02-02 16:26:08.387  INFO 30060 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-02 16:26:08.397  INFO 30060 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-02-02 16:26:08.408 ERROR 30060 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-02 16:26:08.941  WARN 29973 --- [http-nio-8080-exec-3] c.s.p.auth.JwtAuthenticationFilter       : JWT validation failed: JWT strings must contain exactly 2 period characters. Found: 0
+2026-02-02 16:26:22.311  WARN 29973 --- [http-nio-8080-exec-4] c.s.p.auth.JwtAuthenticationFilter       : JWT validation failed: JWT strings must contain exactly 2 period characters. Found: 0
+2026-02-02 16:29:19.459  INFO 30456 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 30456 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:29:19.461 DEBUG 30456 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:29:19.462  INFO 30456 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:29:20.059  INFO 30456 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:29:20.065  INFO 30456 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:29:20.065  INFO 30456 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:29:20.101  INFO 30456 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:29:20.101  INFO 30456 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 609 ms
+2026-02-02 16:29:20.135 DEBUG 30456 --- [main] c.s.p.auth.JwtAuthenticationFilter       : Filter 'jwtAuthenticationFilter' configured for use
+2026-02-02 16:29:20.186  WARN 30456 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 285ce210-db37-48d9-9758-cd4a9e37165a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:29:20.240  INFO 30456 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@62727399, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d9ac0b4, org.springframework.security.web.context.SecurityContextPersistenceFilter@61a88b8c, org.springframework.security.web.header.HeaderWriterFilter@38831718, org.springframework.security.web.authentication.logout.LogoutFilter@6aa3a905, com.soc.phishing.auth.JwtAuthenticationFilter@341814d3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5adb0db3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f270e0a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@130dca52, org.springframework.security.web.session.SessionManagementFilter@e19bb76, org.springframework.security.web.access.ExceptionTranslationFilter@22d7b4f8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@12c7a01b]
+2026-02-02 16:29:20.416  INFO 30456 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-02 16:29:20.425  INFO 30456 --- [main] com.soc.phishing.PhishingSocApplication  : Started PhishingSocApplication in 1.265 seconds (JVM running for 1.554)
+2026-02-02 16:29:20.961  INFO 30456 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-02 16:29:20.961  INFO 30456 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-02 16:29:20.962  INFO 30456 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-02-02 16:29:24.005  INFO 30538 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 30538 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:29:24.007 DEBUG 30538 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:29:24.007  INFO 30538 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:29:24.668  INFO 30538 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:29:24.676  INFO 30538 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:29:24.677  INFO 30538 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:29:24.714  INFO 30538 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:29:24.714  INFO 30538 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 672 ms
+2026-02-02 16:29:24.746 DEBUG 30538 --- [main] c.s.p.auth.JwtAuthenticationFilter       : Filter 'jwtAuthenticationFilter' configured for use
+2026-02-02 16:29:24.792  WARN 30538 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 207e0833-5e36-45c3-a53e-4ff7eaddcbdf
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:29:24.843  INFO 30538 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@13d9b21f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2826f61, org.springframework.security.web.context.SecurityContextPersistenceFilter@512535ff, org.springframework.security.web.header.HeaderWriterFilter@22d7b4f8, org.springframework.security.web.authentication.logout.LogoutFilter@8dbfffb, com.soc.phishing.auth.JwtAuthenticationFilter@20f5281c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61a88b8c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@22295ec4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62727399, org.springframework.security.web.session.SessionManagementFilter@691939c9, org.springframework.security.web.access.ExceptionTranslationFilter@3a12c404, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5629510]
+2026-02-02 16:29:25.019  WARN 30538 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-02-02 16:29:25.022  INFO 30538 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-02 16:29:25.032  INFO 30538 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-02-02 16:29:25.043 ERROR 30538 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-02 16:30:00.901  INFO 30916 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 30916 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:30:00.902 DEBUG 30916 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:30:00.903  INFO 30916 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:30:01.490  INFO 30916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:30:01.497  INFO 30916 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:30:01.497  INFO 30916 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:30:01.531  INFO 30916 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:30:01.531  INFO 30916 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 596 ms
+2026-02-02 16:30:01.564 DEBUG 30916 --- [main] c.s.p.auth.JwtAuthenticationFilter       : Filter 'jwtAuthenticationFilter' configured for use
+2026-02-02 16:30:01.611  WARN 30916 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1b42dcaf-25b3-4e11-bd12-c1f9a85a792d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:30:01.660  INFO 30916 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@130dca52, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2654635, org.springframework.security.web.context.SecurityContextPersistenceFilter@22295ec4, org.springframework.security.web.header.HeaderWriterFilter@2c1156a7, org.springframework.security.web.authentication.logout.LogoutFilter@a22cb6a, com.soc.phishing.auth.JwtAuthenticationFilter@4397ad89, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f270e0a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a760689, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@737a135b, org.springframework.security.web.session.SessionManagementFilter@512535ff, org.springframework.security.web.access.ExceptionTranslationFilter@149dd36b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2826f61]
+2026-02-02 16:30:01.828  INFO 30916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-02 16:30:01.836  INFO 30916 --- [main] com.soc.phishing.PhishingSocApplication  : Started PhishingSocApplication in 1.248 seconds (JVM running for 1.541)
+2026-02-02 16:30:02.364  INFO 30916 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-02 16:30:02.365  INFO 30916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-02 16:30:02.366  INFO 30916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-02-02 16:33:25.279  INFO 31422 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication v0.1.0 using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 31422 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/phishing-soc-0.1.0.jar started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:33:25.282 DEBUG 31422 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:33:25.282  INFO 31422 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:33:25.845  INFO 31422 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:33:25.851  INFO 31422 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:33:25.851  INFO 31422 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:33:25.896  INFO 31422 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:33:25.897  INFO 31422 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 580 ms
+2026-02-02 16:33:25.962 DEBUG 31422 --- [main] c.s.p.auth.JwtAuthenticationFilter       : Filter 'jwtAuthenticationFilter' configured for use
+2026-02-02 16:33:26.029  WARN 31422 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4b047ebd-0906-48e8-bb45-cdcd441b22a2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:33:26.102  INFO 31422 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@687ef2e0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15dcfae7, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a760689, org.springframework.security.web.header.HeaderWriterFilter@691939c9, org.springframework.security.web.authentication.logout.LogoutFilter@2e2ff723, com.soc.phishing.auth.JwtAuthenticationFilter@6f19ac19, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@70f59913, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@77258e59, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3da05287, org.springframework.security.web.session.SessionManagementFilter@22295ec4, org.springframework.security.web.access.ExceptionTranslationFilter@33fe57a9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@130dca52]
+2026-02-02 16:33:26.293  WARN 31422 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-02-02 16:33:26.295  INFO 31422 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-02 16:33:26.304  INFO 31422 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-02-02 16:33:26.313 ERROR 31422 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-02 16:36:55.853  INFO 32070 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 32070 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/classes started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:36:55.853 DEBUG 32070 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:36:55.854  INFO 32070 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:36:56.202  INFO 32070 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:36:56.205  INFO 32070 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:36:56.205  INFO 32070 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:36:56.258  INFO 32070 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:36:56.258  INFO 32070 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 378 ms
+2026-02-02 16:36:56.279 DEBUG 32070 --- [main] c.s.p.auth.JwtAuthenticationFilter       : Filter 'jwtAuthenticationFilter' configured for use
+2026-02-02 16:36:56.318  WARN 32070 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c58761ab-31f3-4d40-9f18-3976b27ad691
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:36:56.356  INFO 32070 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@103082dd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a22bad6, org.springframework.security.web.context.SecurityContextPersistenceFilter@13fed1ec, org.springframework.security.web.header.HeaderWriterFilter@5c8e67b9, org.springframework.security.web.authentication.logout.LogoutFilter@44924587, com.soc.phishing.auth.JwtAuthenticationFilter@64b70919, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@329a1f8d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a565cbd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56afdf9a, org.springframework.security.web.session.SessionManagementFilter@79316f3a, org.springframework.security.web.access.ExceptionTranslationFilter@aa4d8cc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11a8042c]
+2026-02-02 16:36:56.471  WARN 32070 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-02-02 16:36:56.473  INFO 32070 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-02 16:36:56.479  INFO 32070 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-02-02 16:36:56.484 ERROR 32070 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-02 16:37:38.174  INFO 32210 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 32210 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/classes started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:37:38.175 DEBUG 32210 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:37:38.175  INFO 32210 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:37:38.539  INFO 32210 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:37:38.543  INFO 32210 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:37:38.543  INFO 32210 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:37:38.594  INFO 32210 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:37:38.594  INFO 32210 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 393 ms
+2026-02-02 16:37:38.620 DEBUG 32210 --- [main] c.s.p.auth.JwtAuthenticationFilter       : Filter 'jwtAuthenticationFilter' configured for use
+2026-02-02 16:37:38.657  WARN 32210 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: fb5d01f2-3617-4b61-9e63-116829d5d1d2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:37:38.692  INFO 32210 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@103082dd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a22bad6, org.springframework.security.web.context.SecurityContextPersistenceFilter@13fed1ec, org.springframework.security.web.header.HeaderWriterFilter@5c8e67b9, org.springframework.security.web.authentication.logout.LogoutFilter@44924587, com.soc.phishing.auth.JwtAuthenticationFilter@64b70919, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@329a1f8d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a565cbd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56afdf9a, org.springframework.security.web.session.SessionManagementFilter@79316f3a, org.springframework.security.web.access.ExceptionTranslationFilter@aa4d8cc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11a8042c]
+2026-02-02 16:37:38.798  WARN 32210 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-02-02 16:37:38.800  INFO 32210 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-02 16:37:38.807  INFO 32210 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-02-02 16:37:38.812 ERROR 32210 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-02 16:38:16.083  INFO 32361 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 32361 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/classes started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:38:16.084 DEBUG 32361 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:38:16.085  INFO 32361 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:38:16.443  INFO 32361 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:38:16.446  INFO 32361 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:38:16.447  INFO 32361 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:38:16.508  INFO 32361 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:38:16.508  INFO 32361 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 397 ms
+2026-02-02 16:38:16.539 DEBUG 32361 --- [main] c.s.p.auth.JwtAuthenticationFilter       : Filter 'jwtAuthenticationFilter' configured for use
+2026-02-02 16:38:16.589  WARN 32361 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 42c96ada-895c-4d30-8898-cec8d66df6d0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:38:16.635  INFO 32361 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@103082dd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a22bad6, org.springframework.security.web.context.SecurityContextPersistenceFilter@13fed1ec, org.springframework.security.web.header.HeaderWriterFilter@5c8e67b9, org.springframework.security.web.authentication.logout.LogoutFilter@44924587, com.soc.phishing.auth.JwtAuthenticationFilter@64b70919, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@329a1f8d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a565cbd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56afdf9a, org.springframework.security.web.session.SessionManagementFilter@79316f3a, org.springframework.security.web.access.ExceptionTranslationFilter@aa4d8cc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11a8042c]
+2026-02-02 16:38:16.766  WARN 32361 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-02-02 16:38:16.768  INFO 32361 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-02 16:38:16.775  INFO 32361 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-02-02 16:38:16.780 ERROR 32361 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-02 16:38:36.354  INFO 32503 --- [main] com.soc.phishing.PhishingSocApplication  : Starting PhishingSocApplication using Java 11.0.29 on sysadmin-HP-ProOne-440-23-8-inch-G9-All-in-One-Desktop-PC with PID 32503 (/home/user17/kavya/phishing-email-detection/PhishingSOC/target/classes started by user17 in /home/user17/kavya/phishing-email-detection/PhishingSOC)
+2026-02-02 16:38:36.355 DEBUG 32503 --- [main] com.soc.phishing.PhishingSocApplication  : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-02 16:38:36.355  INFO 32503 --- [main] com.soc.phishing.PhishingSocApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-02-02 16:38:36.743  INFO 32503 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-02 16:38:36.746  INFO 32503 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-02 16:38:36.746  INFO 32503 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-02 16:38:36.808  INFO 32503 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-02 16:38:36.808  INFO 32503 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 426 ms
+2026-02-02 16:38:36.839 DEBUG 32503 --- [main] c.s.p.auth.JwtAuthenticationFilter       : Filter 'jwtAuthenticationFilter' configured for use
+2026-02-02 16:38:36.879  WARN 32503 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 5f4d6c78-3aec-48b8-af49-348d02f95e2f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 16:38:36.918  INFO 32503 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@103082dd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a22bad6, org.springframework.security.web.context.SecurityContextPersistenceFilter@13fed1ec, org.springframework.security.web.header.HeaderWriterFilter@5c8e67b9, org.springframework.security.web.authentication.logout.LogoutFilter@44924587, com.soc.phishing.auth.JwtAuthenticationFilter@64b70919, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@329a1f8d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a565cbd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56afdf9a, org.springframework.security.web.session.SessionManagementFilter@79316f3a, org.springframework.security.web.access.ExceptionTranslationFilter@aa4d8cc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11a8042c]
+2026-02-02 16:38:37.028  WARN 32503 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-02-02 16:38:37.030  INFO 32503 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-02 16:38:37.037  INFO 32503 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-02-02 16:38:37.042 ERROR 32503 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+

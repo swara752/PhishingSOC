@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PhishingSOC • Home</title>
+  <link rel="stylesheet" href="login.css">
+  <style>
+    :root{--bg:#000;--panel:#071014;--accent:#00ff6a;--muted:#6b7280}
+    html,body{background:radial-gradient(ellipse at 10% 10%, rgba(0,255,106,0.03), transparent 12%), #000;color:var(--accent);font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace}
+    .container{min-height:100%;display:flex;align-items:center;justify-content:center;padding:2.25rem}
+    .panel{width:100%;max-width:1100px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:10px;padding:1rem;border:1px solid rgba(0,255,106,0.04);box-shadow:0 20px 60px rgba(0,0,0,0.8)}
+    .header .title{color:var(--accent);font-weight:700}
+    .hero{padding:3rem 1rem;text-align:center}
+    .hero h1{color:var(--accent);margin-bottom:.5rem}
+    .hero p{color:rgba(154,230,180,0.8);margin-bottom:0.6rem}
+    .actions{margin-top:1.5rem;display:flex;gap:.6rem;justify-content:center}
+    .btn-cta{padding:.7rem 1.2rem;border-radius:6px;background:transparent;border:1px solid rgba(0,255,106,0.08);color:var(--accent);text-decoration:none}
+    .btn-cta:hover{background:rgba(0,255,106,0.03)}
+    h3{color:#9ae6b4}
+    .muted{color:var(--muted)}
+    a.tab{color:var(--muted);text-decoration:none;padding:.35rem .6rem;border-radius:6px}
+    a.tab:hover{color:var(--accent)}
+    @media(max-width:820px){.panel{padding:.6rem}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="panel" style="max-width:1100px;">
+      <div class="header">
+        <div class="title">PHISHINGSOC — HOME</div>
+        <div>
+          <a href="login.html" class="tab">Login</a>
+          <a href="signup.html" class="tab">Sign Up</a>
+          <a href="user_login.html" class="tab">User Login</a>
+        </div>
+      </div>
+
+      <div class="hero">
+        <h1>Protect Your Email from Phishing</h1>
+        <p>Use the built-in scanners and analytics to detect phishing attempts quickly.</p>
+        <div class="actions">
+          <a class="btn-cta" href="login.html">Get Started</a>
+          <a class="btn-cta" href="signup.html">Create Account</a>
+          <a class="btn-cta" href="dashboard.html">View Dashboard</a>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:1rem">
+        <section style="padding:1rem">
+          <h3 style="color:#9ae6b4">Features</h3>
+          <ul style="color:var(--muted)">
+            <li>AI-assisted phishing detection</li>
+            <li>Detailed risk reports</li>
+            <li>Team collaboration & exports</li>
+          </ul>
+        </section>
+
+        <aside style="padding:1rem">
+          <div class="muted">Quick Login</div>
+          <div style="margin-top:.6rem">
+            <a href="login.html" class="btn">Open login</a>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

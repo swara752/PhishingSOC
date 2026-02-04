@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Login • PhishingSOC</title>
+  <style>
+    :root{--bg:#000;--panel:#061014;--accent:#00ffa3;--danger:#ff3860}
+    body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;background:#000;color:var(--accent);font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace}
+    .wrap{width:96%;max-width:760px;padding:1.25rem;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(0,255,163,0.05);box-shadow:0 18px 60px rgba(0,0,0,0.85)}
+    h1{margin:0 0 .6rem;font-size:1.25rem}
+    .admin-badge{display:inline-block;padding:.2rem .5rem;border-radius:4px;background:rgba(255,255,255,0.02);color:var(--danger);border:1px solid rgba(255,56,96,0.12);font-weight:600}
+    form{display:grid;grid-template-columns:1fr 320px;gap:1rem;margin-top:.8rem}
+    .left{padding:0.6rem}
+    .right{padding:0.6rem;border-left:1px dashed rgba(255,255,255,0.02)}
+    label{display:block;margin-bottom:.6rem}
+    input{width:100%;padding:.6rem;border-radius:6px;background:transparent;border:1px solid rgba(0,255,163,0.06);color:var(--accent)}
+    .controls{display:flex;gap:.6rem;margin-top:.6rem}
+    .show{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--accent);padding:.45rem .7rem;border-radius:6px}
+    /* Authenticate button: black background with green accent */
+    .danger{background:#000;border:1px solid var(--accent);color:var(--accent);padding:.45rem .7rem;border-radius:6px}
+    .back{display:block;margin-top:1rem;color:#7f8b86;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h1>ADMIN CONSOLE</h1>
+      <div class="admin-badge">ADMIN</div>
+    </div>
+
+    <form id="adminForm">
+      <div class="left">
+        <label>Username
+          <input type="text" name="username" placeholder="admin" required>
+        </label>
+        <label>Passphrase
+          <input type="password" name="password" placeholder="••••••••" required id="pwd">
+        </label>
+        <div class="controls">
+          <button type="button" id="toggle" class="show">Show</button>
+          <button type="submit" class="danger">Authenticate</button>
+        </div>
+        <a class="back" href="login.html">← Back to portal</a>
+      </div>
+
+      <aside class="right">
+        <small style="color:#7f8b86">Security</small>
+        <div style="margin-top:.6rem;background:rgba(0,0,0,0.25);padding:.6rem;border-radius:6px">
+          <div>Last login: <strong>—</strong></div>
+          <div style="margin-top:.6rem;color:#9ae6b4">2FA: disabled (demo)</div>
+        </div>
+        <div style="margin-top:1rem;font-size:.85rem;color:#7f8b86">Admin access shows extra telemetry and controls.</div>
+      </aside>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('adminForm');
+    const toggle = document.getElementById('toggle');
+    const pwd = document.getElementById('pwd');
+    toggle.addEventListener('click', ()=>{
+      if(pwd.type==='password'){pwd.type='text'; toggle.textContent='Hide';}else{pwd.type='password';toggle.textContent='Show'}
+    });
+    form.addEventListener('submit', e=>{
+      e.preventDefault();
+      const fd = new FormData(form);
+      console.log('Admin auth attempt', {username:fd.get('username')});
+      alert('Admin authentication simulated.');
+    });
+  </script>
+</body>
+</html>

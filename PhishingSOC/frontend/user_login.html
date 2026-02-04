@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>User Login • PhishingSOC</title>
+  <style>
+    :root{--bg:#020204;--panel:#071013;--accent:#00ff6a;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#000 0%,#051017 60%);font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;color:var(--accent)}
+    .terminal{width:92%;max-width:900px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:8px;padding:1.25rem;border:1px solid rgba(0,255,106,0.06);box-shadow:0 10px 40px rgba(0,0,0,0.7)}
+    .topbar{display:flex;align-items:center;gap:.75rem}
+    .dot{width:11px;height:11px;border-radius:50%;background:#2b2b2b;opacity:.7}
+    h2{margin:0 0 .6rem;font-size:1.2rem}
+    .cols{display:flex;gap:1rem}
+    .left{flex:1;padding:1rem;border-right:1px dashed rgba(0,255,106,0.04)}
+    .right{width:340px;padding:1rem}
+    label{display:block;margin-bottom:.6rem;font-size:.9rem}
+    input[type=text],input[type=email],input[type=password]{width:100%;padding:.6rem;background:transparent;border:1px solid rgba(0,255,106,0.08);color:var(--accent);border-radius:6px}
+    button{background:transparent;border:1px solid var(--accent);color:var(--accent);padding:.6rem .9rem;border-radius:6px;cursor:pointer}
+    .cursor{display:inline-block;width:8px;height:18px;background:var(--accent);vertical-align:middle;margin-left:6px;animation:blink 1s steps(1) infinite}
+    @keyframes blink{50%{opacity:0}}
+    .note{color:#9ae6b4;font-size:.85rem}
+    .back{display:block;margin-top:1rem;color:var(--muted);text-decoration:none}
+  </style>
+</head>
+<body>
+  <main class="terminal">
+    <div class="topbar"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <h2>USER LOGIN</h2>
+      <div class="note">Terminal • secure shell vibe<span class="cursor" aria-hidden="true"></span></div>
+    </div>
+
+    <div class="cols">
+      <section class="left">
+        <p class="note">Welcome back. Enter credentials to authenticate.</p>
+        <form id="userForm">
+          <label>Email
+            <input type="email" name="email" placeholder="you@domain.com" required>
+          </label>
+          <label>Password
+            <input type="password" name="password" placeholder="••••••••" required>
+          </label>
+          <div style="display:flex;gap:.5rem;align-items:center;margin-top:.6rem">
+            <button type="submit">Sign in</button>
+            <button type="button" id="demo" style="border-color:rgba(0,255,106,0.18);color:#9ae6b4">Demo</button>
+          </div>
+        </form>
+        <a class="back" href="login.html">← Back to portal</a>
+      </section>
+
+      <aside class="right">
+        <small class="note">Session</small>
+        <div style="margin-top:.6rem;background:rgba(0,0,0,0.2);padding:.6rem;border-radius:6px;font-size:.85rem">No active session. Local checks: <strong>OK</strong></div>
+        <div style="margin-top:1rem;font-size:.82rem;color:var(--muted)">Tip: Use a strong password with symbols.</div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('userForm');
+    form.addEventListener('submit', e=>{
+      e.preventDefault();
+      const fd = new FormData(form);
+      const payload = {email:fd.get('email'), password:fd.get('password')};
+      console.log('User login attempt', payload);
+      alert('Pretend login successful (demo).');
+    });
+    document.getElementById('demo').addEventListener('click', ()=>{
+      form.email.value='demo@user.local'; form.password.value='password123';
+    });
+  </script>
+</body>
+</html>

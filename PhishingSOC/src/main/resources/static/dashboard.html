@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard • PhishingSOC</title>
+  <style>
+    :root{--bg:#000;--panel:#071014;--accent:#00ff6a;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;background:radial-gradient(ellipse at 10% 10%, rgba(0,255,106,0.03), transparent 12%),var(--bg);color:var(--accent);height:100vh}
+    .app{display:flex;height:100%}
+    /* Sidebar */
+    .sidebar{width:220px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-right:1px solid rgba(0,255,106,0.04);padding:1rem}
+    .brand{font-size:1.05rem;font-weight:700;margin-bottom:1rem}
+    nav a{display:block;color:var(--muted);text-decoration:none;padding:.45rem .4rem;border-radius:6px;margin-bottom:.35rem}
+    nav a.active{color:var(--accent);background:rgba(0,255,106,0.02)}
+
+    /* Main */
+    .main{flex:1;display:flex;flex-direction:column}
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:1rem;border-bottom:1px solid rgba(255,255,255,0.02)}
+    .topbar .title{font-weight:700}
+    .topbar .controls{display:flex;gap:.5rem}
+    .card-row{display:flex;gap:1rem;padding:1rem}
+    .card{flex:1;background:rgba(0,0,0,0.25);padding:1rem;border-radius:8px;border:1px solid rgba(0,255,106,0.04)}
+    .card h3{margin:0;font-size:1rem}
+    .card p{margin:.5rem 0 0;font-size:1.2rem}
+
+    .content{display:grid;grid-template-columns:1fr 360px;gap:1rem;padding:1rem}
+    .panel{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:1rem;border-radius:8px;border:1px solid rgba(0,255,106,0.04)}
+    .terminal{height:300px;overflow:auto;background:#000;padding:.75rem;border-radius:6px;border:1px solid rgba(0,255,106,0.06);font-size:.9rem}
+
+    .small{font-size:.85rem;color:var(--muted)}
+    button{background:transparent;border:1px solid rgba(0,255,106,0.08);color:var(--accent);padding:.45rem .6rem;border-radius:6px;cursor:pointer}
+
+    @media(max-width:900px){.sidebar{display:none}.content{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">PHISHINGSOC</div>
+      <nav>
+        <a href="#" class="active">Overview</a>
+        <a href="#">Incidents</a>
+        <a href="#">Users</a>
+        <a href="#">Settings</a>
+      </nav>
+      <div style="margin-top:1rem" class="small">Server: local • Mode: demo</div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="title">Dashboard</div>
+        <div class="controls">
+          <div class="small">Admin</div>
+          <button id="refreshBtn">Refresh</button>
+        </div>
+      </div>
+
+      <div class="card-row">
+        <div class="card"><h3>Active Alerts</h3><p id="alertsCount">—</p></div>
+        <div class="card"><h3>Suspicious Emails</h3><p id="emailsCount">—</p></div>
+        <div class="card"><h3>Resolved Today</h3><p id="resolvedCount">—</p></div>
+      </div>
+
+      <div class="content">
+        <section>
+          <div id="mainContent">
+            <!-- Default Overview content will be rendered here -->
+            <div class="panel">
+              <h3>Live Log</h3>
+              <div id="terminal" class="terminal" aria-live="polite"></div>
+            </div>
+            <div style="height:12px"></div>
+            <div class="panel">
+              <h3>Recent Events</h3>
+              <ul id="events" class="small" style="margin:0;padding-left:1rem"></ul>
+            </div>
+          </div>
+        </section>
+
+        <aside>
+          <div class="panel">
+            <h3>Telemetry</h3>
+            <div class="small">CPU: <strong id="cpu">—</strong></div>
+            <div class="small">Memory: <strong id="mem">—</strong></div>
+            <div style="margin-top:.6rem"><button id="clearBtn">Clear Log</button></div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Simple simulated dashboard data
+    const alertsCount = document.getElementById('alertsCount');
+    const emailsCount = document.getElementById('emailsCount');
+    const resolvedCount = document.getElementById('resolvedCount');
+    const terminal = document.getElementById('terminal');
+    const events = document.getElementById('events');
+    const cpuEl = document.getElementById('cpu');
+    const memEl = document.getElementById('mem');
+
+    function rand(min,max){return Math.floor(Math.random()*(max-min+1))+min}
+
+    function pushLog(line){
+      const el = document.createElement('div');
+      el.textContent = line;
+      terminal.appendChild(el);
+      terminal.scrollTop = terminal.scrollHeight;
+    }
+
+    function addEvent(txt){
+      const li = document.createElement('li'); li.textContent = txt; events.prepend(li);
+      // cap
+      while(events.children.length>8) events.removeChild(events.lastChild);
+    }
+
+    function tick(){
+      const a = rand(1,12); const e = rand(0,5); const r = rand(0,4);
+      alertsCount.textContent = a;
+      emailsCount.textContent = e*10 + rand(0,9);
+      resolvedCount.textContent = r;
+      cpuEl.textContent = rand(5,60) + '%';
+      memEl.textContent = rand(20,78) + '%';
+
+      const now = new Date().toLocaleTimeString();
+      pushLog(`[${now}] alert#${rand(1000,9999)} status:${['new','investigating','closed'][rand(0,2)]}`);
+      addEvent(`Event ${rand(1,999)} recorded at ${now}`);
+    }
+
+    document.getElementById('refreshBtn').addEventListener('click', ()=>{tick(); pushLog('Manual refresh triggered');});
+    document.getElementById('clearBtn').addEventListener('click', ()=>{terminal.textContent=''; pushLog('Log cleared');});
+
+    // bootstrap
+    for(let i=0;i<6;i++) tick();
+    setInterval(tick,4500);
+
+    // View rendering functions
+    const mainContent = document.getElementById('mainContent');
+    function renderOverview(){
+      mainContent.innerHTML = `
+        <div class="panel">
+          <h3>Live Log</h3>
+          <div id="terminal" class="terminal" aria-live="polite"></div>
+        </div>
+        <div style="height:12px"></div>
+        <div class="panel">
+          <h3>Recent Events</h3>
+          <ul id="events" class="small" style="margin:0;padding-left:1rem"></ul>
+        </div>`;
+      // rebind terminals/events
+      bindTerminalAndEvents();
+    }
+
+    function renderIncidents(){
+      mainContent.innerHTML = `
+        <div class="panel">
+          <h3>Incidents</h3>
+          <table style="width:100%;border-collapse:collapse">
+            <thead><tr><th>#</th><th>Title</th><th>Status</th><th>Time</th></tr></thead>
+            <tbody id="incTable"></tbody>
+          </table>
+        </div>`;
+      const incTable = document.getElementById('incTable');
+      for(let i=0;i<6;i++){
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${1000+i}</td><td>Phish attempt ${i+1}</td><td>${['new','open','closed'][rand(0,2)]}</td><td>${new Date().toLocaleTimeString()}</td>`;
+        incTable.appendChild(tr);
+      }
+    }
+
+    function renderUsers(){
+      mainContent.innerHTML = `
+        <div class="panel">
+          <h3>Users</h3>
+          <ul id="usersList" class="small" style="margin:0;padding-left:1rem"></ul>
+        </div>`;
+      const usersList = document.getElementById('usersList');
+      ['alice','bob','charlie','dave'].forEach(u=>{const li=document.createElement('li');li.textContent=u;usersList.appendChild(li)});
+    }
+
+    function renderSettings(){
+      mainContent.innerHTML = `
+        <div class="panel">
+          <h3>Settings</h3>
+          <label class="small">Mode<select id="mode"><option>demo</option><option>prod</option></select></label>
+          <div style="margin-top:.6rem"><button id="saveSettings">Save</button></div>
+        </div>`;
+      document.getElementById('saveSettings').addEventListener('click', ()=>{pushLog('Settings saved (simulated)');alert('Settings saved (demo)');});
+    }
+
+    function bindTerminalAndEvents(){
+      // rebind references after replacing innerHTML
+      const newTerminal = document.getElementById('terminal');
+      const newEvents = document.getElementById('events');
+      if(newTerminal){
+        // move any existing terminal content into new terminal
+        newTerminal.textContent = terminal.textContent;
+      }
+      if(newEvents){
+        newEvents.innerHTML = events.innerHTML;
+      }
+      // update globals
+      window.terminal = newTerminal || terminal;
+      window.events = newEvents || events;
+    }
+
+    // Sidebar navigation: activate link and update view
+    const navLinks = document.querySelectorAll('.sidebar nav a');
+    navLinks.forEach(a=>a.addEventListener('click', e=>{
+      e.preventDefault();
+      navLinks.forEach(x=>x.classList.remove('active'));
+      a.classList.add('active');
+      const section = a.textContent.trim();
+      document.querySelector('.topbar .title').textContent = section;
+      pushLog(`Switched to ${section} view`);
+      // render matching view
+      if(section==='Overview') renderOverview();
+      else if(section==='Incidents') renderIncidents();
+      else if(section==='Users') renderUsers();
+      else if(section==='Settings') renderSettings();
+      // refresh metrics after switching
+      tick();
+    }));
+
+    // initial render
+    renderOverview();
+  </script>
+</body>
+</html>

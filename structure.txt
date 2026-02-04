@@ -1,0 +1,53 @@
+PhishingSOC/
+│
+├── src/
+│   └── main/
+│       └── java/
+│           └── com/
+│               └── soc/
+│                   └── phishing/
+│
+│                   ├── PhishingSocApplication.java
+│
+│                   ├── auth/
+│                   │   ├── Admin.java
+│                   │   ├── AdminRepository.java
+│                   │   ├── AuthController.java
+│                   │   └── AuthRequest.java
+│
+│                   ├── dashboard/
+│                   │   ├── DashboardController.java
+│                   │   └── DashboardStats.java
+│
+│                   ├── email/
+│                   │   ├── Email.java
+│                   │   ├── EmailRepository.java
+│                   │   ├── EmailController.java
+│                   │   ├── EmailService.java
+│                   │   ├── EmlParserService.java
+│                   │   └── PhishingDetectorService.java
+│
+│                   ├── logs/
+│                   │   ├── PhishingLog.java
+│                   │   ├── PhishingLogRepository.java
+│                   │   └── LogService.java
+│
+│                   ├── utils/
+│                   │   ├── IpUtils.java
+│                   │   └── GeoLocationService.java
+│
+│                   └── config/
+│                       └── SecurityConfig.java
+│
+├── frontend/
+│   ├── login.html
+│   ├── login.css
+│   ├── login.js
+│   ├── dashboard.html
+│   ├── dashboard.css
+│   ├── dashboard.js
+│   └── assets/
+│       └── worldmap.png
+│
+├── pom.xml
+└── application.properties //this is the structure of my project. 
